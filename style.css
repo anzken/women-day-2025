@@ -41,12 +41,12 @@ h1 {
     transition: transform 1s;
 }
 
-.message-box {
+    .message-box {
     display: none;
     position: fixed;
     transform: translate(-50%, -50%);
     width: 480px;
-    min-height: 160px;
+    max-width: 90vw;
     background: white;
     padding: 40px 32px;
     border-radius: 16px;
@@ -55,6 +55,7 @@ h1 {
     animation: fadeIn 1s ease forwards;
     z-index: 1000;
 }
+
 
 .message-box h2 {
     color: #d63384;
@@ -127,4 +128,18 @@ h1 {
 body {
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
+}
+@media (max-width: 600px) {
+  .message-box {
+    width: 90%;
+    padding: 28px 20px;
+  }
+
+  .message-box h2 {
+    font-size: 24px;
+  }
+
+  .message-box p {
+    font-size: 16px;
+  }
 }
