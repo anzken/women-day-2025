@@ -8,7 +8,7 @@ function createPetal() {
     document.body.appendChild(petal);
     setTimeout(() => petal.remove(), 10000);
 }
-setInterval(createPetal, 300);
+setInterval(createPetal, 500);
 
 // Tự động chuyển trang
 setTimeout(() => {
@@ -43,6 +43,6 @@ function openLetter() {
             petal.style.background = "rgba(255,105,180,0.9)";
             document.body.appendChild(petal);
             setTimeout(() => petal.remove(), 8000);
-        }, 150);
+        }, 500);
     }, 1000);
 }
