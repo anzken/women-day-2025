@@ -1,0 +1,99 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffe6eb, #ffd6de);
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+h1 {
+    color: #d63384;
+    font-size: 40px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    animation: fadeIn 2s ease forwards;
+}
+
+.envelope {
+    width: 160px;
+    height: 100px;
+    background: #ff8fa3;
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffb3c1;
+    clip-path: polygon(0 0, 50% 50%, 100% 0);
+    transform-origin: top;
+    transition: transform 1s;
+}
+
+.message-box {
+    display: none;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    width: 480px;
+    min-height: 160px;
+    background: white;
+    padding: 40px 32px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    text-align: center;
+    animation: fadeIn 1s ease forwards;
+    z-index: 1000;
+}
+
+.message-box h2 {
+    color: #d63384;
+    font-size: 32px;
+    margin-bottom: 18px;
+    font-weight: 700;
+}
+
+.message-box p {
+    font-size: 20px;
+    color: #444;
+    line-height: 1.7;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* Cánh hoa rơi */
+.petal {
+    position: absolute;
+    top: -10px;
+    background: rgba(255,192,203,0.8);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: fall 10s linear infinite;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+#bgMusic {
+    display: none;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
